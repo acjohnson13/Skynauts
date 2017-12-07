@@ -23,6 +23,11 @@ int main(int argc, char *argv[])
 
     QGraphicsView *view = new QGraphicsView(scene);
     view->setFixedSize(1080,720);
+
+    //adjust the setPos functions height to change the height of where the player rests.
+    //the subtraction at the end of the view height should be the height of the ground image.
+
+    player1->setPos(view->width()/2, view->height() - 75);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->show();
