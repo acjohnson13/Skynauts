@@ -13,10 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    shipcar.cpp
+    shipcar.cpp \
+    canonball.cpp \
+    clusterbomb.cpp
 
 HEADERS  += \
-    shipcar.h
+    shipcar.h \
+    canonball.h \
+    clusterbomb.h
 
 DISTFILES +=
 
