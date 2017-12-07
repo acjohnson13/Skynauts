@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>pirateship.png</file>
+        <file>canonball.png</file>
+        <file>clusterbomb.png</file>
+        <file>explosion.png</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
