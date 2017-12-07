@@ -1,6 +1,9 @@
 #include "shipcar.h"
 #include <QKeyEvent>
+#include <QGraphicsScene>
 #include <QDebug>
+#include "canonball.h"
+#include "clusterbomb.h"
 void shipcar::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_A){
@@ -27,9 +30,24 @@ void shipcar::keyPressEvent(QKeyEvent *event)
             setPos(980, y());
         }
     }
+    else if(event->key() == Qt::Key_Space){
+        //shoot a canonball
+        canonball *ball = new canonball();
+        ball->setPos(x(), y());
+        scene()->addItem(ball);
+    }
+    else if((event->key() == Qt::Key_C) && (clusterinventory > 0)){
+        //shoot a canonball
+        clusterbomb *cluster = new clusterbomb();
+        cluster->setPos(x(), y());
+        scene()->addItem(cluster);
+        clusterinventory = clusterinventory - 1;
+    }
 }
 
 shipcar::shipcar()
 {
+    clusterinventory = 3;
     setPixmap(QPixmap(":/images/pirateship.png"));
+    healthpoints = 200;
 }
